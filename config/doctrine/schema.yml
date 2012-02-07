@@ -1,0 +1,71 @@
+Cliente:
+  actAs:
+    Timestampable: ~
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+    nome_fantasia: { type: string(255) }    
+    razao_social: { type: string(255) }
+    cpf_cnpj: { type: integer(14) }
+    endereco: {type: string(150) }
+    cep: { type: string(10)}      
+    bairro: { type: string(45) }
+    cidade: { type: string(150) }      
+    uf: { type: string(150) }
+    responsavel: { type: string(150) }      
+    responsavel_cpf: { type: string(13) }      
+    responsavel_end: { type: string(150) }
+    responsavel_cep: { type: string(10) }
+    responsavel_bairro: { type: string(150) }
+    responsavel_cidade: { type: string(150) }
+    responsavel_uf: { type: string(100) }
+    situacao: { type: integer(4) }
+      
+
+
+Email:
+  columns:
+    email: { type: string(255) }
+    cliente_id: { type: integer }
+    tipo: { type: string(2) }
+  relations:
+    Cliente: { onDelete: CASCADE, local: cliente_id, foreign: id }
+      
+Telefone:
+  columns:
+    telefone: { type: string(255) }
+    cliente_id: { type: integer }
+    tipo: { type: string(2) }
+  relations:
+    Cliente: { onDelete: CASCADE, local: cliente_id, foreign: id }
+
+Atendimento:
+  actAs:
+    Timestampable: ~
+  columns:
+    descricao: { type: string(255) }
+    cliente_id: { type: integer }
+    tipo: { type: string(20) }
+    numero: { type:  string(20) }
+  relations:
+    Cliente:  { onDelete: CASCADE, local: cliente_id, foreign: id }
+
+Os:
+  actAs:
+    Timestampable: ~
+  columns:
+    telefone: { type: string(255) }
+    cliente_id: { type: integer }
+    atendimento_id: { type: integer }
+    tipo: { type: string(2) }    
+    descricao: { type: string(255) }
+  relations:
+    Cliente:  { onDelete: CASCADE, local: cliente_id, foreign: id }
+  
+      
+      
+      
+      
+  

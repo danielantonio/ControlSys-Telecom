@@ -1,0 +1,7 @@
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn: 'mysql:dbname=CONTROLSYS;host=localhost'
+      username: controlsys
+      password: '123'

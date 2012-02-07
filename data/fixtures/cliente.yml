@@ -1,0 +1,45 @@
+Email:
+  email_1:
+    cliente_id: 1
+    email:      'danel@m.com'
+  email_2:
+    cliente_id: 1
+    email:      'danielantonio@minasmais.com.br'
+  email_3:
+    cliente_id: 1
+    email:      'sdkkdkfdkfks@minasmais.com.br'
+Cliente:
+  daniel:
+    nome_fantasia:	NetMania
+    razao_social:	'NetWork'
+    cpf_cnpj:		01281680567
+    endereco:		'Rua Poeta Jose Salles de Campos, 1770A'
+    cep:		49035650
+    bairro:		'Coroa do Meio'
+    cidade:		'Aracaju'
+    uf:			'SE'
+    responsavel:	'Daniel Antonio'
+    responsavel_cpf:	012
+    responsavel_end:	'POeta JOse Salles'
+    responsavel_cep:	'49035650'
+    responsavel_bairro: 'Coroa do Meio'
+    responsavel_cidade:	'Aracaju'
+    responsavel_uf:	'SE'
+    situacao:		'AT'
+  jimmy:
+    nome_fantasia:	Caninos Androids
+    razao_social:	Canios Enc.
+    cpf_cnpj:		01281680567
+    endereco:		Rua Poeta Jose Salles de Campos, 1770A
+    cep:		49035650
+    bairro:		Coroa do Meio
+    cidade:		Aracaju
+    uf:			SE
+    responsavel:	Daniel Antonio
+    responsavel_cpf:	012
+    responsavel_end:	POeta JOse Salles
+    responsavel_cep:	49035650
+    responsavel_bairro: Coroa do Meio
+    responsavel_cidade:	Aracaju
+    responsavel_uf:	SE
+    situacao:		AT

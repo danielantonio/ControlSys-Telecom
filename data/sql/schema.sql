@@ -1,0 +1,9 @@
+CREATE TABLE atendimento (id BIGINT AUTO_INCREMENT, descricao VARCHAR(255), cliente_id BIGINT, tipo VARCHAR(20), numero VARCHAR(20), created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX cliente_id_idx (cliente_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE cliente (id BIGINT AUTO_INCREMENT, nome_fantasia VARCHAR(255), razao_social VARCHAR(255), cpf_cnpj BIGINT, endereco VARCHAR(150), cep VARCHAR(10), bairro VARCHAR(45), cidade VARCHAR(150), uf VARCHAR(150), responsavel VARCHAR(150), responsavel_cpf VARCHAR(13), responsavel_end VARCHAR(150), responsavel_cep VARCHAR(10), responsavel_bairro VARCHAR(150), responsavel_cidade VARCHAR(150), responsavel_uf VARCHAR(100), situacao INT, created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE email (id BIGINT AUTO_INCREMENT, email VARCHAR(255), cliente_id BIGINT, tipo VARCHAR(2), INDEX cliente_id_idx (cliente_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE os (id BIGINT AUTO_INCREMENT, telefone VARCHAR(255), cliente_id BIGINT, atendimento_id BIGINT, tipo VARCHAR(2), descricao VARCHAR(255), created_at DATETIME NOT NULL, updated_at DATETIME NOT NULL, INDEX cliente_id_idx (cliente_id), PRIMARY KEY(id)) ENGINE = INNODB;
+CREATE TABLE telefone (id BIGINT AUTO_INCREMENT, telefone VARCHAR(255), cliente_id BIGINT, tipo VARCHAR(2), INDEX cliente_id_idx (cliente_id), PRIMARY KEY(id)) ENGINE = INNODB;
+ALTER TABLE atendimento ADD CONSTRAINT atendimento_cliente_id_cliente_id FOREIGN KEY (cliente_id) REFERENCES cliente(id) ON DELETE CASCADE;
+ALTER TABLE email ADD CONSTRAINT email_cliente_id_cliente_id FOREIGN KEY (cliente_id) REFERENCES cliente(id) ON DELETE CASCADE;
+ALTER TABLE os ADD CONSTRAINT os_cliente_id_cliente_id FOREIGN KEY (cliente_id) REFERENCES cliente(id) ON DELETE CASCADE;
+ALTER TABLE telefone ADD CONSTRAINT telefone_cliente_id_cliente_id FOREIGN KEY (cliente_id) REFERENCES cliente(id) ON DELETE CASCADE;
